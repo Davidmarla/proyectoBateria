@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+
+* {
+    font-family: "New Rocker", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: grid;
+    grid-template-areas: 
+        "a"
+        "b"
+        "c";
+    background-color: rgb(4, 121, 247);
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle at center center, #c31fd9, #438ed9), repeating-radial-gradient(circle at center center, #2bd91f, #1fd9b1, 22px, transparent 44px, transparent 22px);
+    background-blend-mode: multiply;
+    background-color: #43d9d7; 
+    background-size: cover;
+}
+
+header {
+    grid-area: a;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    font-size: 1.75rem;
+    color: white;
+    grid-area: a;
+    text-align: center;
+}
+
+
+
+#menu {
+    grid-area: b;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+#instrumento {
+        grid-area: c;
+        display: flex;
+        flex-wrap: wrap;
+        width: 700px;
+        height: 700px;
+        margin-left: auto; 
+        margin-right: auto;
+        display:block;
+    }
+
+#teclado {
+    display: flex;
+    justify-content: flex-start;
+}
+tecla {
+    padding: 0.1em 0.6em;
+    border: 1px solid #ccc;
+    font-family: "New Rocker", sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 2px #fff inset;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0px 0.1em;
+    text-shadow: 0px 1px 0px #fff;
+    line-height: 1.4;
+    white-space: nowrap;
+    font-size: 12px;
+    cursor: pointer;
+    height: 18px;
+}
+
+.boton {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #8b2e2e;
+    color: #ffffff;
+    text-transform: uppercase;
+    align-items: flex-start;
+    filter: drop-shadow(4px 4px 4px black);
+    }
+
+.play {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #333;
+    color: #f7f7f7;
+    position: relative;
+    display: inline-block;
+    filter: drop-shadow(4px 4px 4px black);
+}
+
+.stop {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #333;
+    color: #f7f7f7;
+    filter: drop-shadow(4px 4px 4px black);
+}
+
+.share {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #333;
+    color: #f7f7f7;
+    filter: drop-shadow(4px 4px 4px black);
+}
+
+#teclado {
+    margin: 10%;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
