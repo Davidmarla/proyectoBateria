@@ -6,46 +6,83 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: 70px 13px 24% 24% 24% 20px;
     grid-template-areas:
         "a"
         "b"
         "c"
         "d"
-        "e";
+        "e"
+        "f";
+    background-image: radial-gradient(circle at center center, #c31fd9, #438ed9),
+        repeating-radial-gradient(
+            circle at center center,
+            #1f4ed9,
+            #1fcad9,
+            22px,
+            transparent 44px,
+            transparent 22px
+        );
+    background-blend-mode: multiply;
+    background-color: #43d7d9;
+    background-size: cover;
 }
 
 header {
+    grid-area: a;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    height: 100px;
+    background-color: default;
+    height: 70px;
     width: 100vw;
-    font-size: 1.75rem;
+    font-size: 1.45rem;
     color: white;
-    grid-area: a;
     text-align: center;
 }
 
-#puntuaciones {
-    display: flex;
-    flex-direction: column;
+header > img {
+    height: 3rem;
+    width: 3rem;
+}
+
+h1 {
+    color: black;
+    text-shadow: 2px 2px 12px #438ed9;
+}
+
+menu {
     grid-area: b;
-    align-items: flex-end;
-    justify-content: flex-start;
+}
+
+ul {
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+li > a {
+    color: black;
+    font-size: 1rem;
+    text-shadow: 2px 2px 12px #438ed9;
+    text-decoration: none;
 }
 
 #drums,
-#cymbal {
+#cymbal,
+#drums1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0;
 }
 
 #cymbal {
@@ -58,23 +95,80 @@ header {
     display: flex;
 }
 
-p {
-    align-items: center;
-    justify-content: center;
+#drums1 {
+    grid-area: e;
+    display: flex;
 }
-.drum,
-.cymbal {
-    width: 75px;
-    height: 75px;
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 75px;
+
+.ride > img {
+    width: 80px;
+    height: 80px;
+}
+
+.crash > img {
+    width: 90px;
+    height: 90px;
+}
+
+.hihat > img {
+    width: 90px;
+    height: 90px;
+}
+
+.snare > img {
+    width: 90px;
+    height: 90px;
+}
+
+.tom > img {
+    width: 90px;
+    height: 90px;
+}
+
+.kick > img {
+    width: 90px;
+    height: 90px;
+}
+
+img:hover {
+    animation: vibrate 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-1deg);
+    }
+    20% {
+        transform: rotate(1deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(-1deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(-1deg);
+    }
+    80% {
+        transform: rotate(1deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-1deg);
+    }
 }
 
 #teclado {
@@ -82,8 +176,9 @@ p {
     align-items: center;
     justify-content: center;
 }
+
 tecla {
-    grid-area: e;
+    grid-area: f;
     padding: 0.1em 0.6em;
     border: 1px solid #ccc;
     font-family: "New Rocker", sans-serif;
