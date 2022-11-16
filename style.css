@@ -44,11 +44,12 @@ header {
     font-size: 1.45rem;
     color: white;
     text-align: center;
+    margin: 0;
 }
 
 header > img {
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 h1 {
@@ -130,7 +131,7 @@ li > a {
     height: 90px;
 }
 
-img:hover {
+/* img:hover {
     animation: vibrate 0.5s;
     animation-iteration-count: infinite;
 }
@@ -169,11 +170,26 @@ img:hover {
     100% {
         transform: rotate(-1deg);
     }
-}
+} */
 
 #teclado {
-    display: flex;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "e";
     align-items: center;
+    justify-content: center;
+}
+
+.up,
+.mid,
+.down,
+.special {
+    display: flex;
     justify-content: center;
 }
 
