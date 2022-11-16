@@ -40,7 +40,7 @@ kick.addEventListener("click", () => {
 document.addEventListener("keydown", handleKeyDown);
 
 function handleKeyDown(e) {
-    tconsole.log(e.code);
+    console.log(e.code);
     switch (e.code) {
         case "KeyT":
             let rideSound = new Audio("./sounds/ride.wav");
