@@ -37,33 +37,60 @@ kick.addEventListener("click", () => {
     kickSound.play();
 });
 
-document.addEventListener("keydown", handleKeyDown);
-
 function handleKeyDown(e) {
-    console.log(e.code);
+    console.log(e);
     switch (e.code) {
         case "KeyT":
             let rideSound = new Audio("./sounds/ride.wav");
             rideSound.play();
+            break;
 
         case "KeyY":
             let crashSound = new Audio("./sounds/crash.wav");
             crashSound.play();
+            break;
+
+        case "KeyD":
+            let hihatSound1 = new Audio("./sounds/hihat-close.wav");
+            hihatSound1.play();
+            break;
 
         case "KeyF":
             let hihatSound = new Audio("./sounds/hihat-open.wav");
             hihatSound.play();
+            break;
 
         case "KeyG":
             let snareSound = new Audio("./sounds/snare.wav");
             snareSound.play();
+            break;
 
         case "KeyH":
-            let tomSound = new Audio("./sounds/tom-mid.wav");
+            let tomSound = new Audio("./sounds/tom-high.wav");
             tomSound.play();
+            break;
 
-        case "KeyB":
+        case "KeyJ":
+            let tomSound1 = new Audio("./sounds/tom-mid.wav");
+            tomSound1.play();
+            break;
+
+        case "KeyK":
+            let tomSound2 = new Audio("./sounds/tom-low.wav");
+            tomSound2.play();
+            break;
+
+        case "Space":
             let kickSound = new Audio("./sounds/kick.wav");
             kickSound.play();
+            break;
     }
 }
+
+document.addEventListener("keydown", handleKeyDown);
+
+let vibrate = document.querySelectorAll("cymbal, drums, drums1");
+
+vibrate.addEventListener("click", () => {
+    vibrate.classList.add("vibrate");
+});
