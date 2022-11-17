@@ -73,7 +73,7 @@ ul {
 li > a {
     color: black;
     font-size: 1rem;
-    text-shadow: 2px 2px 12px #438ed9;
+    text-shadow: 4px 4px 16px #000000;
     text-decoration: none;
 }
 
@@ -99,7 +99,6 @@ li > a {
 #drums1 {
     grid-area: e;
     display: flex;
-    margin-bottom: 1rem;
 }
 
 .ride > img {
@@ -132,6 +131,10 @@ li > a {
     height: 90px;
 }
 
+.legend1 > p,
+.legend2 > p {
+    font-size: 80%;
+}
 tecla {
     grid-area: f;
     padding: 0.1em 0.6em;
@@ -154,14 +157,14 @@ tecla {
 }
 
 #teclado {
+    max-width: 80vw;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
     grid-gap: 0.5rem;
-    align-content: space-between;
-    justify-items: space-between;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 2rem;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
 }
 
 .teclas {
@@ -190,6 +193,8 @@ tecla {
 
 .vibrate {
     transform-origin: center center;
+    animation-name: vibrate;
+    animation-duration: 250ms;
 }
 
 @keyframes vibrate {
@@ -197,33 +202,33 @@ tecla {
         transform: rotate(0deg);
     }
     10% {
-        transform: rotate(-1deg);
+        transform: rotate(-3deg);
     }
     20% {
-        transform: rotate(1deg);
+        transform: rotate(3deg);
     }
     30% {
         transform: rotate(0deg);
     }
     40% {
-        transform: rotate(1deg);
+        transform: rotate(3deg);
     }
     50% {
-        transform: rotate(-1deg);
+        transform: rotate(-3deg);
     }
     60% {
         transform: rotate(0deg);
     }
     70% {
-        transform: rotate(-1deg);
+        transform: rotate(-3deg);
     }
     80% {
-        transform: rotate(1deg);
+        transform: rotate(3deg);
     }
     90% {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(-1deg);
+        transform: rotate(-3deg);
     }
 }

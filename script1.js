@@ -31,17 +31,17 @@ const playHOpen = () => {
     vibrateInstrument(hihat);
 };
 
-ride.addEventListener("click", () => {
+/* ride.addEventListener("click", () => {
     playRide();
-});
+}); */
 
-crash.addEventListener("click", () => {
+/* crash.addEventListener("click", () => {
     playCrash();
-});
+}); */
 
-hihat.addEventListener("click", () => {
+/* hihat.addEventListener("click", () => {
     playHOpen();
-});
+}); */
 
 snare.addEventListener("click", () => {
     let snareSound = new Audio("./sounds/snare.wav");
@@ -107,3 +107,25 @@ function handleKeyDown(e) {
 }
 
 document.addEventListener("keydown", handleKeyDown);
+
+// const instruments = document.querySelectorAll(".instrument");
+
+// const vibrate = (event) => {
+//     const element = event.target;
+
+//     element.classList.add("vibrate");
+
+//     setTimeout(() => element.classList.remove("vibrate"), 250);
+// };
+
+// for (const instrument of instruments) {
+// }
+
+// vibrate.addEventListener("click", () => {
+//     vibrate.classList.add("vibrate");
+// });
+
+// vibrate.addEventListener("click", () => {
+//     ride.classList.add("vibrate");
+//     setTimeout(() => ride.classList.remove("vibrate"), 100);
+// });
