@@ -20,42 +20,57 @@ const playRide = () => {
 };
 
 const playCrash = () => {
-    let rideSound = new Audio("./sounds/crash.wav");
-    rideSound.play();
+    let crashSound = new Audio("./sounds/crash.wav");
+    crashSound.play();
     vibrateInstrument(crash);
 };
 
 const playHOpen = () => {
-    let rideSound = new Audio("./sounds/hihat-open.wav");
-    rideSound.play();
+    let hihatSound = new Audio("./sounds/hihat-open.wav");
+    hihatSound.play();
     vibrateInstrument(hihat);
 };
 
-/* ride.addEventListener("click", () => {
-    playRide();
-}); */
-
-/* crash.addEventListener("click", () => {
-    playCrash();
-}); */
-
-/* hihat.addEventListener("click", () => {
-    playHOpen();
-}); */
-
-snare.addEventListener("click", () => {
+const playSnare = () => {
     let snareSound = new Audio("./sounds/snare.wav");
     snareSound.play();
+    vibrateInstrument(snare);
+}
+
+const playTomMid = () => {
+    let tomMidSound = new Audio("./sounds/tom-mid.wav");
+    tomMidSound.play();
+    vibrateInstrument(tom);
+}
+
+const playKick = () => {
+    let kickSound = new Audio("./sounds/kick.wav");
+    kickSound.play();
+    vibrateInstrument(kick);
+}
+
+ride.addEventListener("click", () => {
+    playRide();
 });
 
-tom.addEventListener("click", () => {
-    let tomSound = new Audio("./sounds/tom-mid.wav");
-    tomSound.play();
+crash.addEventListener("click", () => {
+    playCrash();
+});
+
+hihat.addEventListener("click", () => {
+    playHOpen();
+});
+
+snare.addEventListener("click", () => {
+    playSnare();
+});
+
+tomMid.addEventListener("click", () => {
+    playTomMid();
 });
 
 kick.addEventListener("click", () => {
-    let kickSound = new Audio("./sounds/kick.wav");
-    kickSound.play();
+    playKick();
 });
 
 function handleKeyDown(e) {
@@ -64,9 +79,9 @@ function handleKeyDown(e) {
         case "KeyT":
             playRide();
             break;
+
         case "KeyY":
-            let crashSound = new Audio("./sounds/crash.wav");
-            crashSound.play();
+            playCrash();
             break;
 
         case "KeyD":
@@ -75,13 +90,11 @@ function handleKeyDown(e) {
             break;
 
         case "KeyF":
-            let hihatSound = new Audio("./sounds/hihat-open.wav");
-            hihatSound.play();
+            playHOpen();
             break;
 
         case "KeyG":
-            let snareSound = new Audio("./sounds/snare.wav");
-            snareSound.play();
+            playSnare();
             break;
 
         case "KeyH":
@@ -90,8 +103,7 @@ function handleKeyDown(e) {
             break;
 
         case "KeyJ":
-            let tomSound1 = new Audio("./sounds/tom-mid.wav");
-            tomSound1.play();
+            playTomMid();
             break;
 
         case "KeyK":
@@ -100,32 +112,25 @@ function handleKeyDown(e) {
             break;
 
         case "Space":
-            let kickSound = new Audio("./sounds/kick.wav");
-            kickSound.play();
+            playKick();
             break;
     }
 }
 
 document.addEventListener("keydown", handleKeyDown);
 
-// const instruments = document.querySelectorAll(".instrument");
 
-// const vibrate = (event) => {
-//     const element = event.target;
-
-//     element.classList.add("vibrate");
-
-//     setTimeout(() => element.classList.remove("vibrate"), 250);
-// };
-
-// for (const instrument of instruments) {
-// }
-
-// vibrate.addEventListener("click", () => {
-//     vibrate.classList.add("vibrate");
-// });
-
-// vibrate.addEventListener("click", () => {
-//     ride.classList.add("vibrate");
-//     setTimeout(() => ride.classList.remove("vibrate"), 100);
-// });
+const playHClose = () => {
+    window.addEventListener(
+        "click",
+        function (e) {
+            if (e.shiftKey) {
+                let hHCloseSound = new Audio("./sounds/hihat-close.wav");
+                hHCloseSound.play();
+                vibrateInstrument(hihat);
+            } else {
+            }
+        },
+        false
+    );
+};
