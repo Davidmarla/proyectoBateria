@@ -3,94 +3,183 @@
 let ride = document.querySelector(".ride");
 let crash = document.querySelector(".crash");
 let hihat = document.querySelector(".hihat");
+let hihat1 = document.querySelector(".hihat");
 let snare = document.querySelector(".snare");
 let tom = document.querySelector(".tom");
 let kick = document.querySelector(".kick");
 
-ride.addEventListener("click", () => {
+//////////////////// FUNCIONES PARA HACER SONAR LOS INSTRUMENTOS MEDIANTE RATÓN, TECLADO Y PULSACIÓN EN PANTALLA
+const vibrateInstrument = (instrument) => {
+    instrument.classList.add("vibrate");
+
+    setTimeout(() => instrument.classList.remove("vibrate"), 250);
+};
+
+const playRide = () => {
     let rideSound = new Audio("./sounds/ride.wav");
     rideSound.play();
-});
+    vibrateInstrument(ride);
+};
 
-crash.addEventListener("click", () => {
+const playCrash = () => {
     let crashSound = new Audio("./sounds/crash.wav");
     crashSound.play();
-});
+    vibrateInstrument(crash);
+};
 
-hihat.addEventListener("click", () => {
-    let hihatSound = new Audio("./sounds/hihat-open.wav");
-    hihatSound.play();
-});
+const playHOpen = () => {
+    let hHOpenSound = new Audio("./sounds/hihat-open.wav");
+    hHOpenSound.play();
+    vibrateInstrument(hihat);
+};
 
-snare.addEventListener("click", () => {
+const playHClose = () => {
+    let hHOpenSound1 = new Audio("./sounds/hihat-close.wav");
+    hHOpenSound1.play();
+    vibrateInstrument(hihat);
+};
+
+const playSnare = () => {
     let snareSound = new Audio("./sounds/snare.wav");
     snareSound.play();
-});
+    vibrateInstrument(snare);
+};
 
-tom.addEventListener("click", () => {
-    let tomSound = new Audio("./sounds/tom-mid.wav");
-    tomSound.play();
-});
+const playTomHigh = () => {
+    let tomMidSound1 = new Audio("./sounds/tom-high.wav");
+    tomMidSound1.play();
+    vibrateInstrument(tom);
+};
 
-kick.addEventListener("click", () => {
+const playTomMid = () => {
+    let tomMidSound = new Audio("./sounds/tom-mid.wav");
+    tomMidSound.play();
+    vibrateInstrument(tom);
+};
+
+const playTomLow = () => {
+    let tomMidSound2 = new Audio("./sounds/tom-low.wav");
+    tomMidSound2.play();
+    vibrateInstrument(tom);
+};
+
+const playKick = () => {
     let kickSound = new Audio("./sounds/kick.wav");
     kickSound.play();
-});
+    vibrateInstrument(kick);
+};
 
 function handleKeyDown(e) {
     console.log(e);
     switch (e.code) {
         case "KeyT":
-            let rideSound = new Audio("./sounds/ride.wav");
-            rideSound.play();
+            playRide();
             break;
 
         case "KeyY":
-            let crashSound = new Audio("./sounds/crash.wav");
-            crashSound.play();
+            playCrash();
             break;
 
         case "KeyD":
-            let hihatSound1 = new Audio("./sounds/hihat-close.wav");
-            hihatSound1.play();
+            playHOpen();
             break;
 
         case "KeyF":
-            let hihatSound = new Audio("./sounds/hihat-open.wav");
-            hihatSound.play();
+            playHClose();
             break;
 
         case "KeyG":
-            let snareSound = new Audio("./sounds/snare.wav");
-            snareSound.play();
+            playSnare();
             break;
 
         case "KeyH":
-            let tomSound = new Audio("./sounds/tom-high.wav");
-            tomSound.play();
+            playTomHigh();
             break;
 
         case "KeyJ":
-            let tomSound1 = new Audio("./sounds/tom-mid.wav");
-            tomSound1.play();
+            playTomMid();
             break;
 
         case "KeyK":
-            let tomSound2 = new Audio("./sounds/tom-low.wav");
-            tomSound2.play();
+            playTomLow();
             break;
 
         case "Space":
-            let kickSound = new Audio("./sounds/kick.wav");
-            kickSound.play();
+            playKick();
             break;
     }
 }
 
+//////////////////// MANEJO DE LOS INSTRUMENTOS DESDE RATÓN O PULSACIÓN
+ride.addEventListener("click", () => {
+    playRide();
+});
+
+crash.addEventListener("click", () => {
+    playCrash();
+});
+
+hihat.addEventListener("click", () => {
+    playHOpen();
+});
+
+snare.addEventListener("click", () => {
+    playSnare();
+});
+
+tom.addEventListener("click", () => {
+    playTomMid();
+});
+
+kick.addEventListener("click", () => {
+    playKick();
+});
+
 document.addEventListener("keydown", handleKeyDown);
 
-let vibrate = document.querySelectorAll("cymbal, drums, drums1");
+/////////////////   MANEJO DEL TECLADO VIRTUAL EN MÓVILES MEDIANTE PULSACIÓN
+let teclaT = document.querySelector(".teclaT");
+let teclaY = document.querySelector(".teclaY");
+let teclaD = document.querySelector(".teclaD");
+let teclaF = document.querySelector(".teclaF");
+let teclaG = document.querySelector(".teclaG");
+let teclaH = document.querySelector(".teclaH");
+let teclaJ = document.querySelector(".teclaJ");
+let teclaK = document.querySelector(".teclaK");
+let teclaSB = document.querySelector(".teclaSB");
 
-vibrate.addEventListener("click", () => {
-    vibrate.classList.add("vibrate");
+teclaT.addEventListener("click", () => {
+    playRide();
+});
+
+teclaY.addEventListener("click", () => {
+    playCrash();
+});
+
+teclaD.addEventListener("click", () => {
+    playHOpen();
+});
+
+teclaF.addEventListener("click", () => {
+    playHClose();
+});
+
+teclaG.addEventListener("click", () => {
+    playSnare();
+});
+
+teclaH.addEventListener("click", () => {
+    playTomHigh();
+});
+
+teclaJ.addEventListener("click", () => {
+    playTomMid();
+});
+
+teclaK.addEventListener("click", () => {
+    playTomLow();
+});
+
+teclaSB.addEventListener("click", () => {
+    playKick();
 });
