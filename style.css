@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 70px 13px 20% 15% 25% 20px;
+    grid-template-rows: 100px 20px 20% 15% 25% 100px;
     grid-template-areas:
         "a"
         "b"
@@ -31,6 +31,8 @@ body {
     background-blend-mode: multiply;
     background-color: #43d7d9;
     background-size: cover;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -107,13 +109,13 @@ li > a {
 }
 
 .crash > img {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 }
 
 .hihat > img {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
 }
 
 .snare > img {
@@ -131,10 +133,22 @@ li > a {
     height: 90px;
 }
 
+#teclado {
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: 25vw 45vw 25vw;
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    align-content: center;
+    justify-items: center;
+    margin-left: 0 0;
+}
+
 .legend1 > p,
 .legend2 > p {
     font-size: 80%;
 }
+
 tecla {
     grid-area: f;
     padding: 0.1em 0.6em;
@@ -154,17 +168,6 @@ tecla {
     height: 19px;
     align-items: center;
     justify-content: center;
-}
-
-#teclado {
-    max-width: 80vw;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 0.5rem;
-    align-items: center;
-    justify-items: center;
-    margin: 0 auto;
 }
 
 .teclas {
