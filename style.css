@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 100px 20px 20% 15% 25% 100px;
+    grid-template-rows: 100px 20px 20% 15% 25% 100px; /* 3rem 20px 18% 15% 20% 100px; */
     grid-template-areas:
         "a"
         "b"
@@ -46,12 +46,7 @@ header {
     font-size: 1.45rem;
     color: white;
     text-align: center;
-    margin: 0;
-}
-
-header > img {
-    height: 2.5rem;
-    width: 2.5rem;
+    margin: auto 0;
 }
 
 h1 {
@@ -114,13 +109,13 @@ li > a {
 }
 
 .hihat > img {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
 }
 
 .snare > img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
 }
 
 .tom > img {
@@ -134,19 +129,26 @@ li > a {
 }
 
 #teclado {
-    max-width: 80vw;
+    max-width: 100vw;
     display: grid;
-    grid-template-columns: 25vw 45vw 25vw;
+    grid-template-columns: 25vw 46vw 25vw;
     grid-template-rows: auto;
     grid-gap: 0.5rem;
     align-content: center;
     justify-items: center;
     margin-left: 0 0;
+    margin-right: 0 0;
 }
 
 .legend1 > p,
 .legend2 > p {
     font-size: 80%;
+    color: black;
+    margin-left: 1rem;
+}
+
+.legend1 > p {
+    margin-left: 1rem;
 }
 
 tecla {
@@ -176,7 +178,7 @@ tecla {
         "up"
         "mid"
         "down";
-    grid-gap: 0.75rem;
+    gap: 0.75rem;
 }
 
 .up {
@@ -205,33 +207,92 @@ tecla {
         transform: rotate(0deg);
     }
     10% {
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
     }
     20% {
-        transform: rotate(3deg);
+        transform: rotate(5deg);
     }
     30% {
         transform: rotate(0deg);
     }
     40% {
-        transform: rotate(3deg);
+        transform: rotate(5deg);
     }
     50% {
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
     }
     60% {
         transform: rotate(0deg);
     }
     70% {
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
     }
     80% {
-        transform: rotate(3deg);
+        transform: rotate(5deg);
     }
     90% {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
+    }
+}
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    body {
+        grid-template-rows: 3rem 20px 18% 15% 20% 100px;
+    }
+}
+
+@media (min-width: 550px) and (min-height: 576px) {
+    header {
+        font-size: 2rem;
+    }
+
+    li > a {
+        color: black;
+        font-size: 1.5rem;
+    }
+
+    .ride > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .crash > img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hihat > img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .snare > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tom > img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .kick > img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 120%;
+        color: black;
+        margin-left: 1rem;
+    }
+
+    tecla {
+        font-size: 18px;
+        height: 30px;
     }
 }
