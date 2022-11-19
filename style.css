@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 100px 20px 20% 15% 25% 100px; /* 3rem 20px 18% 15% 20% 100px; */
+    grid-template-rows: 100px 20px 20% 15% 25% 100px;
     grid-template-areas:
         "a"
         "b"
@@ -109,8 +109,8 @@ li > a {
 }
 
 .hihat > img {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
 }
 
 .snare > img {
