@@ -79,6 +79,51 @@ li > a {
     text-decoration: none;
 }
 
+#record {
+    background-color: red;
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 125px;
+    right: 100px;
+    position: relative;
+}
+/*#recordedAudio {
+    left: 100px;
+    right: 100px;
+    position: relative;
+} */
+
+#stopRecord {
+    background-color: rgb(8, 54, 8);
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 20%;
+    left: 0px;
+    right: 100px;
+    position: relative;
+}
+
 #drums,
 #cymbal,
 #drums1 {
