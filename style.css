@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 100px 20px 20% 15% 25% 100px;
+    grid-template-rows: 10vh 5vh 20vh 20vh 25vh 15vh;
     grid-template-areas:
         "a"
         "b"
@@ -40,13 +40,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: default;
     height: 70px;
     width: 100vw;
-    font-size: 1.45rem;
+    font-size: 1rem;
     color: white;
     text-align: center;
-    margin: auto 0;
+    margin: 0 auto 0;
 }
 
 h1 {
@@ -54,11 +53,11 @@ h1 {
     text-shadow: 2px 2px 12px #438ed9;
 }
 
-menu {
+.menu {
     grid-area: b;
 }
 
-ul {
+nav > div {
     padding-top: 0;
     display: flex;
     flex-direction: row;
@@ -67,10 +66,12 @@ ul {
     list-style: none;
 }
 
-li > a {
+button {
     color: black;
+    background-color: #333;
+    border-radius: 12%;
     font-size: 1rem;
-    text-shadow: 4px 4px 16px #000000;
+    text-shadow: 2px 2px 12px #438ed9;
     text-decoration: none;
 }
 
@@ -99,33 +100,33 @@ li > a {
 }
 
 .ride > img {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .crash > img {
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
 }
 
 .hihat > img {
-    width: 110px;
-    height: 110px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .snare > img {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .tom > img {
-    width: 90px;
-    height: 90px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .kick > img {
-    width: 90px;
-    height: 90px;
+    width: 5rem;
+    height: 5rem;
 }
 
 #teclado {
@@ -136,8 +137,8 @@ li > a {
     grid-gap: 0.5rem;
     align-content: center;
     justify-items: center;
-    margin-left: 0 0;
-    margin-right: 0 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .legend1 > p,
@@ -145,6 +146,7 @@ li > a {
     font-size: 80%;
     color: black;
     margin-left: 1rem;
+    text-shadow: 2px 2px 12px #438ed9;
 }
 
 .legend1 > p {
@@ -167,7 +169,7 @@ tecla {
     white-space: nowrap;
     font-size: 11px;
     cursor: pointer;
-    height: 19px;
+    height: 1.3rem;
     align-items: center;
     justify-content: center;
 }
@@ -194,6 +196,17 @@ tecla {
 .down {
     grid-area: down;
     margin: 0 auto;
+}
+
+footer {
+    height: 1rem;
+    position: fixed;
+    bottom: 0;
+}
+
+footer > p {
+    font-size: 0.8rem;
+    color: white;
 }
 
 .vibrate {
@@ -238,61 +251,341 @@ tecla {
     }
 }
 
-@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+@media only screen and (min-width: 915px) and (min-height: 432px) {
     body {
-        grid-template-rows: 3rem 20px 18% 15% 20% 100px;
+        grid-template-rows: 12vh 5vh 19vh 15vh 25vh 17vh;
     }
-}
 
-@media (min-width: 550px) and (min-height: 576px) {
     header {
         font-size: 2rem;
     }
 
-    li > a {
-        color: black;
-        font-size: 1.5rem;
+    button {
+        font-size: 2rem;
     }
 
     .ride > img {
-        width: 100px;
-        height: 100px;
+        width: 10rem;
+        height: 10rem;
     }
 
     .crash > img {
-        width: 120px;
-        height: 120px;
+        width: 11rem;
+        height: 11rem;
     }
 
     .hihat > img {
-        width: 110px;
-        height: 110px;
+        width: 10rem;
+        height: 10rem;
     }
 
     .snare > img {
-        width: 100px;
-        height: 100px;
+        width: 10rem;
+        height: 10rem;
     }
 
     .tom > img {
-        width: 110px;
-        height: 110px;
+        width: 10rem;
+        height: 10rem;
     }
 
     .kick > img {
-        width: 110px;
-        height: 110px;
+        width: 11rem;
+        height: 11rem;
     }
 
     .legend1 > p,
     .legend2 > p {
-        font-size: 120%;
-        color: black;
-        margin-left: 1rem;
+        font-size: 1.5rem;
     }
 
     tecla {
-        font-size: 18px;
-        height: 30px;
+        font-size: 20px;
+        height: 2rem;
+    }
+}
+
+.recording {
+    color: red;
+}
+
+.playing {
+    color: green;
+}
+
+@media only screen and (width: 1024px) and (height: 600px) {
+    header {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+
+    .ride > img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .crash > img {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .hihat > img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .snare > img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .tom > img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .kick > img {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 1.2rem;
+    }
+
+    tecla {
+        font-size: 14px;
+        height: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    body {
+        grid-template-rows: 8vh 5vh 20vh 20vh 25vh 15vh;
+    }
+
+    header {
+        margin-top: 1rem;
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 3rem;
+    }
+
+    .ride > img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .crash > img {
+        width: 21rem;
+        height: 21rem;
+    }
+
+    .hihat > img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .snare > img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .tom > img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .kick > img {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 3rem;
+    }
+
+    tecla {
+        font-size: 35px;
+        height: 3.1rem;
+    }
+
+    footer {
+        height: 1rem;
+        position: relative;
+        bottom: 0;
+    }
+
+    footer > p {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (width: 1368px) and (height: 912px) {
+    body {
+        grid-template-rows: 10vh 5vh 20vh 20vh 27vh 17vh;
+    }
+
+    header {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    .ride > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .crash > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .hihat > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .snare > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .tom > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .kick > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 1.5rem;
+    }
+
+    tecla {
+        font-size: 20px;
+        height: 2rem;
+    }
+}
+
+@media only screen and (width: 912px) and (height: 1368px) {
+    body {
+        grid-template-rows: 10vh 5vh 20vh 20vh 27vh 17vh;
+    }
+
+    header {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    .ride > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .crash > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .hihat > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .snare > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .tom > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .kick > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 1.5rem;
+    }
+
+    tecla {
+        font-size: 20px;
+        height: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 820px) {
+    body {
+        grid-template-rows: 10vh 5vh 20vh 20vh 27vh 17vh;
+    }
+
+    header {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    .ride > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .crash > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .hihat > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .snare > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .tom > img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .kick > img {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .legend1 > p,
+    .legend2 > p {
+        font-size: 1.5rem;
+    }
+
+    tecla {
+        font-size: 20px;
+        height: 2rem;
     }
 }

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BATACRACK</title>
-        <link rel="icon" href="/images/batera3.png" type="image/icon type" />
-        <link rel="stylesheet" href="/style.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <header>
-            <!-- <img src="/images/batera3.png" alt="" /> -->
             <h1>BATACRACK</h1>
-            <!-- <img src="/images/batera3.png" alt="" /> -->
         </header>
         <nav class="menu">
-            <ul>
-                <li><a href="#">Grabar</a></li>
-                <li><a href="#">Play/Pause</a></li>
-                <li><a href="#">Stop</a></li>
-            </ul>
+            <div>
+                <button class="record">Record</button>
+                <button class="play">Play</button>
+                <button class="stop">Stop Rec</button>
+            </div>
         </nav>
         <div id="cymbal">
             <div class="ride">
-                <img class="instrument" src="/images/ride.png" alt="Ride"/>
+                <img class="instrument" src="/images/ride.png" alt="Ride" />
             </div>
             <div class="crash">
-                <img class="instrument" src="/images/crash.png" alt="Crash"/>
+                <img class="instrument" src="/images/crash.png" alt="Crash" />
             </div>
         </div>
         <div id="drums">
             <div class="hihat">
-                <img class="instrument" src="/images/hihat.png" alt="Hihat"/>
+                <img class="instrument" src="/images/hihat.png" alt="Hihat" />
             </div>
             <div class="snare">
-                <img class="instrument" src="/images/snare.png" alt="Snare"/>
+                <img class="instrument" src="/images/snare.png" alt="Snare" />
             </div>
             <div class="tom">
-                <img class="instrument" src="/images/tom.png" alt="Tom"/>
+                <img class="instrument" src="/images/tom.png" alt="Tom" />
             </div>
         </div>
         <div id="drums1">
             <div class="kick">
-                <img class="instrument" src="/images/kick.png" alt="Kick"/>
+                <img class="instrument" src="/images/kick.png" alt="Kick" />
             </div>
         </div>
         <div id="teclado">
@@ -76,6 +79,8 @@
                 <p>K: Tom Low</p>
                 <p>Space Bar: Kick</p>
             </div>
-        <script src="/script.js"></script>
+        </div>
+        <script type="module" src="/main.js"></script>
     </body>
+    <footer><p>©️JD</p></footer>
 </html>
