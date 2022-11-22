@@ -1,254 +1,121 @@
-import * as functions from "/functions.js";
+"use strict";
 
-("use strict");
-
-/* let ride = document.querySelector(".ride");
-let crash = document.querySelector(".crash");
-let hihat = document.querySelector(".hihat");
-let hihat1 = document.querySelector(".hihat");
-let snare = document.querySelector(".snare");
-let tom = document.querySelector(".tom");
-let kick = document.querySelector(".kick");
-
-// FUNCIONES PARA HACER SONAR, GRABAR Y VIBRAR LOS INSTRUMENTOS MEDIANTE RATÓN, TECLADO Y PULSACIÓN EN PANTALLA
-
-const vibrateInstrument = (instrument) => {
-    instrument.classList.add("vibrate");
-
-    setTimeout(() => instrument.classList.remove("vibrate"), 250);
-};
-
-const playRide = () => {
-    let rideSound = new Audio("./sounds/ride.wav");
-    rideSound.play();
-    vibrateInstrument(ride);
-    if (recording) {
-        recordFunc(rideSound);
-    }
-};
-
-const playCrash = () => {
-    let crashSound = new Audio("./sounds/crash.wav");
-    crashSound.play();
-    vibrateInstrument(crash);
-    if (recording) {
-        recordFunc(crashSound);
-    }
-};
-
-const playHOpen = () => {
-    let hHOpenSound = new Audio("./sounds/hihat-open.wav");
-    hHOpenSound.play();
-    vibrateInstrument(hihat);
-    if (recording) {
-        recordFunc(hHOpenSound);
-    }
-};
-
-const playHClose = () => {
-    let hHOpenSound1 = new Audio("./sounds/hihat-close.wav");
-    hHOpenSound1.play();
-    vibrateInstrument(hihat);
-    if (recording) {
-        recordFunc(hHOpenSound1);
-    }
-};
-
-const playSnare = () => {
-    let snareSound = new Audio("./sounds/snare.wav");
-    snareSound.play();
-    vibrateInstrument(snare);
-    if (recording) {
-        recordFunc(snareSound);
-    }
-};
-
-const playTomHigh = () => {
-    let tomMidSound1 = new Audio("./sounds/tom-high.wav");
-    tomMidSound1.play();
-    vibrateInstrument(tom);
-    if (recording) {
-        recordFunc(tomMidSound1);
-    }
-};
-
-const playTomMid = () => {
-    let tomMidSound = new Audio("./sounds/tom-mid.wav");
-    tomMidSound.play();
-    vibrateInstrument(tom);
-    if (recording) {
-        recordFunc(tomMidSound);
-    }
-};
-
-const playTomLow = () => {
-    let tomMidSound2 = new Audio("./sounds/tom-low.wav");
-    tomMidSound2.play();
-    vibrateInstrument(tom);
-    if (recording) {
-        recordFunc(tomMidSound2);
-    }
-};
-
-const playKick = () => {
-    let kickSound = new Audio("./sounds/kick.wav");
-    kickSound.play();
-    vibrateInstrument(kick);
-    if (recording) {
-        recordFunc(kickSound);
-    }
-};
-
-function handleKeyDown(e) {
-    switch (e.code) {
-        case "KeyT":
-            playRide();
-            break;
-
-        case "KeyY":
-            playCrash();
-            break;
-
-        case "KeyD":
-            playHOpen();
-            break;
-
-        case "KeyF":
-            playHClose();
-            break;
-
-        case "KeyG":
-            playSnare();
-            break;
-
-        case "KeyH":
-            playTomHigh();
-            break;
-
-        case "KeyJ":
-            playTomMid();
-            break;
-
-        case "KeyK":
-            playTomLow();
-            break;
-
-        case "Space":
-            playKick();
-            break;
-    }
-} */
+import {
+    ride,
+    crash,
+    hihat,
+    hihat1,
+    snare,
+    tom,
+    kick,
+    teclaT,
+    teclaY,
+    teclaD,
+    teclaF,
+    teclaG,
+    teclaH,
+    teclaJ,
+    teclaK,
+    teclaB,
+    playRide,
+    playCrash,
+    playHOpen,
+    playHClose,
+    playSnare,
+    playTomHigh,
+    playTomMid,
+    playTomLow,
+    playKick,
+    handleKeyDown,
+    recording,
+    record,
+    play,
+    stopRec,
+    recordedArray,
+    recordFunc,
+    playArray,
+    clearRec,
+    startRecording,
+    stopRecording,
+} from "/functions.js";
 
 // MANEJO DE LOS INSTRUMENTOS DESDE RATÓN O PULSACIÓN
 
-functions.ride.addEventListener("click", () => {
-    functions.playRide();
+ride.addEventListener("click", () => {
+    playRide();
 });
 
-functions.crash.addEventListener("click", () => {
-    functions.playCrash();
+crash.addEventListener("click", () => {
+    playCrash();
 });
 
-functions.hihat.addEventListener("click", () => {
-    functions.playHOpen();
+hihat.addEventListener("click", () => {
+    playHOpen();
 });
 
-functions.snare.addEventListener("click", () => {
-    functions.playSnare();
+snare.addEventListener("click", () => {
+    playSnare();
 });
 
-functions.tom.addEventListener("click", () => {
-    functions.playTomMid();
+tom.addEventListener("click", () => {
+    playTomMid();
 });
 
-functions.kick.addEventListener("click", () => {
-    functions.playKick();
+kick.addEventListener("click", () => {
+    playKick();
 });
 
-document.addEventListener("keydown", functions.handleKeyDown);
+document.addEventListener("keydown", handleKeyDown);
 
 // MANEJO DEL TECLADO VIRTUAL EN MÓVILES MEDIANTE PULSACIÓN
 
-let teclaT = document.querySelector(".teclaT");
-let teclaY = document.querySelector(".teclaY");
-let teclaD = document.querySelector(".teclaD");
-let teclaF = document.querySelector(".teclaF");
-let teclaG = document.querySelector(".teclaG");
-let teclaH = document.querySelector(".teclaH");
-let teclaJ = document.querySelector(".teclaJ");
-let teclaK = document.querySelector(".teclaK");
-let teclaSB = document.querySelector(".teclaSB");
-
 teclaT.addEventListener("click", () => {
-    functions.playRide();
+    playRide();
 });
 
 teclaY.addEventListener("click", () => {
-    functions.playCrash();
+    playCrash();
 });
 
 teclaD.addEventListener("click", () => {
-    functions.playHOpen();
+    playHOpen();
 });
 
 teclaF.addEventListener("click", () => {
-    functions.playHClose();
+    playHClose();
 });
 
 teclaG.addEventListener("click", () => {
-    functions.playSnare();
+    playSnare();
 });
 
 teclaH.addEventListener("click", () => {
-    functions.playTomHigh();
+    playTomHigh();
 });
 
 teclaJ.addEventListener("click", () => {
-    functions.playTomMid();
+    playTomMid();
 });
 
 teclaK.addEventListener("click", () => {
-    functions.playTomLow();
+    playTomLow();
 });
 
-teclaSB.addEventListener("click", () => {
-    functions.playKick();
+teclaB.addEventListener("click", () => {
+    playKick();
 });
 
-////////////BONUS
+//////////// BONUS
 
-/* let recording = false;
-let record = document.querySelector(".record");
-let play = document.querySelector(".play");
-let stopRec = document.querySelector(".stop");
-let recordedArray = []; */
-
-let altRecording = functions.recording;
-let altRecordedArray = functions.recordedArray;
-
-functions.record.addEventListener("click", () => {
-    altRecording = true;
-    altRecordedArray = [];
+record.addEventListener("click", () => {
+    startRecording();
+    clearRec();
 });
 
-functions.play.addEventListener("click", () => {
-    functions.playArray();
+play.addEventListener("click", () => {
+    playArray();
 });
 
-functions.stopRec.addEventListener("click", () => {
-    altRecording = false;
+stopRec.addEventListener("click", () => {
+    stopRecording();
 });
-
-/* function recordFunc(a) {
-    recordedArray.push(a);
-    //console.log(a);
-}
-
-function playArray() {
-    for (let i = 0; i < recordedArray.length; i++) {
-        setTimeout(function () {
-            recordedArray[i].play();
-            //console.log(recordedArray[i]);
-        }, 300 * i);
-    }
-} */

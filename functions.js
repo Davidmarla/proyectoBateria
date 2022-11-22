@@ -15,13 +15,12 @@ let teclaG = document.querySelector(".teclaG");
 let teclaH = document.querySelector(".teclaH");
 let teclaJ = document.querySelector(".teclaJ");
 let teclaK = document.querySelector(".teclaK");
-let teclaSB = document.querySelector(".teclaSB");
+let teclaB = document.querySelector(".teclaB");
 
 // FUNCIONES PARA HACER SONAR, GRABAR Y VIBRAR LOS INSTRUMENTOS MEDIANTE RATÓN, TECLADO Y PULSACIÓN EN PANTALLA
 
 const vibrateInstrument = (instrument) => {
     instrument.classList.add("vibrate");
-
     setTimeout(() => instrument.classList.remove("vibrate"), 250);
 };
 
@@ -55,7 +54,7 @@ const playHOpen = () => {
 const playHClose = () => {
     let hHOpenSound1 = new Audio("./sounds/hihat-close.wav");
     hHOpenSound1.play();
-    vibrateInstrument(hihat);
+    vibrateInstrument(hihat1);
     if (recording) {
         recordFunc(hHOpenSound1);
     }
@@ -140,28 +139,14 @@ function handleKeyDown(e) {
             playTomLow();
             break;
 
-        case "Space":
+        case "KeyB":
             playKick();
-            break; //  BONUS FUNCTIONS
-            function recordFunc(a) {
-                recordedArray.push(a);
-                //console.log(a);
-            }
-
-            function playArray() {
-                for (let i = 0; i < recordedArray.length; i++) {
-                    setTimeout(function () {
-                        recordedArray[i].play();
-                        //console.log(recordedArray[i]);
-                    }, 300 * i);
-                }
-            }
+            break;
     }
 }
 
-//////////// BONUS
-
-let recording = true;
+/////BONUS
+let recording = false;
 let record = document.querySelector(".record");
 let play = document.querySelector(".play");
 let stopRec = document.querySelector(".stop");
@@ -169,16 +154,21 @@ let recordedArray = [];
 
 function recordFunc(a) {
     recordedArray.push(a);
-    //console.log(a);
+    console.log(a);
 }
 
 function playArray() {
+    stopRecording();
     for (let i = 0; i < recordedArray.length; i++) {
         setTimeout(function () {
             recordedArray[i].play();
             //console.log(recordedArray[i]);
         }, 300 * i);
     }
+}
+
+function clearRec() {
+    recordedArray = [];
 }
 
 export {
@@ -197,8 +187,7 @@ export {
     teclaH,
     teclaJ,
     teclaK,
-    teclaSB,
-    vibrateInstrument,
+    teclaB,
     playRide,
     playCrash,
     playHOpen,
@@ -216,4 +205,17 @@ export {
     recordedArray,
     recordFunc,
     playArray,
+    clearRec,
+    startRecording,
+    stopRecording,
 };
+
+function startRecording() {
+    record.classList.add("recording");
+    recording = true;
+}
+
+function stopRecording() {
+    record.classList.remove("recording");
+    recording = false;
+}

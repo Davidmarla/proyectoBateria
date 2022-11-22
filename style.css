@@ -153,6 +153,10 @@ button {
     margin-left: 1rem;
 }
 
+.recording {
+    color: red;
+}
+
 tecla {
     grid-area: f;
     padding: 0.1em 0.6em;
